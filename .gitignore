@@ -1,0 +1,11 @@
+# GCP files
+/GCP
+
+# Config file
+config.py
+
+# Cache files
+.vscode
+/__pycache__
+*.pyc
+*.json
