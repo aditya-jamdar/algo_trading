@@ -90,7 +90,7 @@ class TradeManager(AssetManager):
         end {DateTime}   -- Till date
         num_bars {int}   -- Maximum no. of bars desired
         timeframe {str}  -- Desired time frame 
-        **kwargs         -- Keyword arguments for limit price, etc.
+        **kwargs         -- Keyword arguments for limit price, etc
 
         Returns
         -------

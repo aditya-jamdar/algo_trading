@@ -9,10 +9,10 @@ class AssetManager():
     api = tradeapi.REST(API_KEY, SECRET_KEY, BASE_URL, api_version='v2')
 
     def __init__(self):
-        # Get account information.
+        # Get account information
         self.account = self.api.get_account()
         self.buying_power = self.account.buying_power
-        # Check if our account is restricted from trading. 
+        # Check if our account is restricted from trading
         if self.account.trading_blocked:
             raise Exception('Account is currently restricted from trading.')
     
@@ -34,6 +34,6 @@ class AssetManager():
         return active_assets
 
     def __is_tradable(self, tickr):
-        # Check if asset is tradable on the Alpaca platform.
+        # Check if asset is tradable on the Alpaca platform
         asset = self.api.get_asset(tickr)
         return asset.tradable
