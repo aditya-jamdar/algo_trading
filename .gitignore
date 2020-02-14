@@ -8,4 +8,3 @@ config.py
 .vscode
 /__pycache__
 *.pyc
-*.json

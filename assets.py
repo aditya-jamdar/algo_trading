@@ -1,4 +1,6 @@
 from config import *
+import logging
+import pandas as pd
 import alpaca_trade_api as tradeapi
 
 
@@ -14,6 +16,16 @@ class AssetManager():
         if self.account.trading_blocked:
             raise Exception('Account is currently restricted from trading.')
     
+    def get_positions(self):
+        positions = self.api.list_positions()
+        df = pd.DataFrame(
+                {'ticker': [i.symbol for i in positions],
+                'qty': [i.qty for i in positions],
+                'market_value': [i.market_value for i in positions]}
+            ).set_index('ticker')
+        df['qty'] = df.qty.astype(int)
+        return df
+
     def get_active_assets(self, *args):
         # Get active assests by filtering on exchange(s)
         active_assets = self.api.list_assets(status='active')
