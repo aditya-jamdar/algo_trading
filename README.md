@@ -1,2 +1,2 @@
 # algo_trading
-Algorithmic trading wrapper
+Autonomous algorithmic trading based on Markowitz Efficient Frontier theory.
